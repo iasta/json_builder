@@ -7,6 +7,10 @@ class TestValue < Test::Unit::TestCase
     JSONBuilder::Value.new(nil, value).to_s
   end
 
+  def test_string_value_with_double_quotes
+    assert_equal "\"hello\\\"world\"", value('hello"world')
+  end
+
   def test_positive_value
     assert_equal '1', value(1)
   end

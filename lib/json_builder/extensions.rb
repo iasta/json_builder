@@ -14,7 +14,7 @@ end
 
 class String
   def to_builder
-    "\"#{self}\""
+    "\"#{self.gsub('"', '\"')}\""
   end
 end
 
