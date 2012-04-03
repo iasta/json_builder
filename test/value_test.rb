@@ -11,6 +11,10 @@ class TestValue < Test::Unit::TestCase
     assert_equal "\"hello\\\"world\"", value('hello"world')
   end
 
+  def test_string_value_with_backslash
+    assert_equal "\"hello\\\"\\\\world\"", value('hello"\world')
+  end
+
   def test_positive_value
     assert_equal '1', value(1)
   end
